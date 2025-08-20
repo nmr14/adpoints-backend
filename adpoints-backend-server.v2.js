@@ -1,4 +1,3 @@
-
 // Adpoints Backend Server v2
 import express from "express";
 import Database from "better-sqlite3";
@@ -143,6 +142,16 @@ app.post("/admin/redemptions/:id/:action", auth, adminOnly, (req, res) => {
     if (!["approve","reject"].includes(action)) return res.status(400).json({ error: "Invalid action" });
     db.prepare("UPDATE redemptions SET status=? WHERE id=?").run(action, id);
     res.json({ success: true });
+});
+
+// الصفحة الرئيسية
+app.get("/", (req, res) => {
+  res.send("🚀 Backend is running successfully!");
+});
+
+// للتأكد أن السيرفر شغال
+app.get("/health", (req, res) => {
+  res.json({ status: "ok" });
 });
 
 const port = process.env.PORT || 4000;
