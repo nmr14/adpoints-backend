@@ -1,0 +1,16 @@
+{
+  "name": "adpoints-backend",
+  "version": "1.0.0",
+  "main": "adpoints-backend-server.v2.js",
+  "scripts": {
+    "start": "node adpoints-backend-server.v2.js"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "better-sqlite3": "^8.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0"
+  }
+}
